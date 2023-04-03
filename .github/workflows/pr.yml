@@ -9,8 +9,6 @@ jobs:
   send_message:
     runs-on: ubuntu-latest
     steps:
-      - uses: microsoft/Teams-MSGraph-Samples/actions/msteams-send-message@v1
-        with:
-          teams-webhook-url: ${{ secrets.TEAMS_WEBHOOK_URL }}
-          message: "New pull request opened"
-          summary: "Pull Request opened by"
+      - name: Send message to Teams
+        run: |
+          curl -H "Content-Type: application/json" -d '{"text": "New pull request opened"}' ${{ secrets.TEAMS_WEBHOOK_URL }}
