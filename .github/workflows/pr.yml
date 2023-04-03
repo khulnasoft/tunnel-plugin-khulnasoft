@@ -1,16 +1,16 @@
 name: testing for PR
 
 on:
-  pull_request:
+  push:
+    branches:
+      - test
 
 jobs:
-  build:
-    name: testing PR build
+  send_message:
     runs-on: ubuntu-latest
-
     steps:
-      - uses: actions/checkout@v3
+      - uses: microsoft/Teams-MSGraph-Samples/actions/msteams-send-message@v1
         with:
-          fetch-depth: 0
-      - name: Run tests
-        run: make test
+          teams-webhook-url: ${{ secrets.TEAMS_WEBHOOK_URL }}
+          message: "New pull request opened"
+          summary: "Pull Request opened by"
