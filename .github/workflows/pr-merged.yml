@@ -21,8 +21,8 @@ jobs:
     - name: Login to docker.io registry
       uses: docker/login-action@v2
       with:
-        username: ${{ secrets.ARGON_DOCKERHUB_USER }}
-        password: ${{ secrets.ARGON_DOCKERHUB_TOKEN }}
+        username: ${{ secrets.DOCKERHUB_USER }}
+        password: ${{ secrets.DOCKERHUB_TOKEN }}
     - name: Extract version
       run: "echo \"new_version=$(grep 'version: ' plugin.yaml | cut -d '\"' -f2)\" >> $GITHUB_ENV"
     - name: Change image versions to latest
@@ -50,7 +50,7 @@ jobs:
     - name: DockerHub description update
       uses: peter-evans/dockerhub-description@v3
       with:
-        username: ${{ secrets.ARGON_DOCKERHUB_USER }}
-        password: ${{ secrets.ARGON_DOCKERHUB_TOKEN }}
+        username: ${{ secrets.DOCKERHUB_USER }}
+        password: ${{ secrets.DOCKERHUB_TOKEN }}
         repository: khulnasoft/khulnasoft-scanner
         readme-filepath: ./README-dockerhub.md
