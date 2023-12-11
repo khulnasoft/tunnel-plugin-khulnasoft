@@ -1,26 +1,26 @@
-name: "aqua"
-repository: github.com/aquasecurity/trivy-plugin-aqua
+name: "khulnasoft"
+repository: github.com/khulnasoft/tunnel-plugin-khulnasoft
 version: "v0.88.10-dotnet"
-usage: trivy aqua <srcPath>
-description: A Trivy plugin that sends results to Aqua.
+usage: tunnel khulnasoft <srcPath>
+description: A Tunnel plugin that sends results to KhulnaSoft.
 platforms:
   - selector: # optional
       os: linux
       arch: amd64
-    uri: https://github.com/aquasecurity/trivy-plugin-aqua/releases/download/v0.88.10-dotnet/linux_amd64_v0.88.10-dotnet.tar.gz
-    bin: ./aqua
+    uri: https://github.com/khulnasoft/tunnel-plugin-khulnasoft/releases/download/v0.88.10-dotnet/linux_amd64_v0.88.10-dotnet.tar.gz
+    bin: ./khulnasoft
   - selector:
       os: linux
       arch: arm64
-    uri: https://github.com/aquasecurity/trivy-plugin-aqua/releases/download/v0.88.10-dotnet/linux_arm64_v0.88.10-dotnet.tar.gz
-    bin: ./aqua
+    uri: https://github.com/khulnasoft/tunnel-plugin-khulnasoft/releases/download/v0.88.10-dotnet/linux_arm64_v0.88.10-dotnet.tar.gz
+    bin: ./khulnasoft
   - selector:
       os: darwin
       arch: amd64
-    uri: https://github.com/aquasecurity/trivy-plugin-aqua/releases/download/v0.88.10-dotnet/darwin_amd64_v0.88.10-dotnet.tar.gz
-    bin: ./aqua
+    uri: https://github.com/khulnasoft/tunnel-plugin-khulnasoft/releases/download/v0.88.10-dotnet/darwin_amd64_v0.88.10-dotnet.tar.gz
+    bin: ./khulnasoft
   - selector:
       os: darwin
       arch: arm64
-    uri: https://github.com/aquasecurity/trivy-plugin-aqua/releases/download/v0.88.10-dotnet/darwin_arm64_v0.88.10-dotnet.tar.gz
-    bin: ./aqua
+    uri: https://github.com/khulnasoft/tunnel-plugin-khulnasoft/releases/download/v0.88.10-dotnet/darwin_arm64_v0.88.10-dotnet.tar.gz
+    bin: ./khulnasoft
