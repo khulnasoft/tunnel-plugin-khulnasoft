@@ -13,8 +13,8 @@
 
 
 # Generates when debugging the plugin
-cmd/aqua/db/
-cmd/aqua/fanal
+cmd/khulnasoft/db/
+cmd/khulnasoft/fanal
 
 results.json
 policy/
