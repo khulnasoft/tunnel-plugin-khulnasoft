@@ -1,12 +1,12 @@
-# Code Repository Protection with Aqua Security Trivy Plugin
+# Code Repository Protection with KhulnaSoft Security Tunnel Plugin
 
 ## Description
 
-The **Aqua Security Trivy Plugin** is a premium offering designed to enhance the security of your code repositories by seamlessly integrating with Trivy ([Trivy](https://github.com/aquasecurity/trivy)), an industry-leading vulnerability scanner ([Trivy docs](https://aquasecurity.github.io/trivy)). Exclusively available for Aqua Security customers, this plugin provides advanced security features beyond standard vulnerability scanning.
+The **KhulnaSoft Security Tunnel Plugin** is a premium offering designed to enhance the security of your code repositories by seamlessly integrating with Tunnel ([Tunnel](https://github.com/khulnasoft/tunnel)), an industry-leading vulnerability scanner ([Tunnel docs](https://khulnasoft.github.io/tunnel)). Exclusively available for KhulnaSoft Security customers, this plugin provides advanced security features beyond standard vulnerability scanning.
 
 ## Features
 
-- **Enhanced Security Scans**: Aqua Security customers benefit from advanced features including Enhenced Secret Scanning engine, SAST (Static application security testing), Reachability Checks, and more.
+- **Enhanced Security Scans**: KhulnaSoft Security customers benefit from advanced features including Enhenced Secret Scanning engine, SAST (Static application security testing), Reachability Checks, and more.
 
 - **Better Secret Scanning**: Detect sensitive information such as API keys and passwords within your codebase and configuration files to prevent potential leaks.
 
@@ -14,7 +14,7 @@ The **Aqua Security Trivy Plugin** is a premium offering designed to enhance the
 
 - **Reachability Check**: This analysis provides more granular information to understand whether an existing vulnerability is reachable to the packages in your code repository. If a vulnerability is reachable, you may prioritize fixing it.
 
-- **Customizable Security Policies**: Tailor security policies to your organization's needs, including severity thresholds and compliance requirements. For more information, please see the Aqua official documentation.
+- **Customizable Security Policies**: Tailor security policies to your organization's needs, including severity thresholds and compliance requirements. For more information, please see the KhulnaSoft official documentation.
 
 - **Detailed Reporting**: Receive comprehensive security reports, complete with actionable remediation recommendations.
 
@@ -22,7 +22,7 @@ The **Aqua Security Trivy Plugin** is a premium offering designed to enhance the
 
 ## Get Started
 
-To begin leveraging the Aqua Security Trivy Integration to protect your code repositories, reach out to our sales or support team to learn more about the benefits and access.
+To begin leveraging the KhulnaSoft Security Tunnel Integration to protect your code repositories, reach out to our sales or support team to learn more about the benefits and access.
 
 ## Environment Variables
 
@@ -32,17 +32,17 @@ The only explicitly required environment variables are
 
 | Variable    | Purpose                   |
 | :---------- | :------------------------ |
-| AQUA_KEY    | Generated through CSPM UI |
-| AQUA_SECRET | Generated through CSPM UI |
+| KHULNASOFT_KEY    | Generated through CSPM UI |
+| KHULNASOFT_SECRET | Generated through CSPM UI |
 
 ### Optional
 
 | Variable | Purpose                                              |
 | :------- | :--------------------------------------------------- |
-| CSPM_URL | Aqua CSPM URL (default: us-east-1 CSPM)              |
-| AQUA_URL | Aqua platform URL (default: us-east-1 Aqua platform) |
+| CSPM_URL | KhulnaSoft CSPM URL (default: us-east-1 CSPM)              |
+| KHULNASOFT_URL | KhulnaSoft platform URL (default: us-east-1 KhulnaSoft platform) |
 
-Trivy will attempt to resolve the following details from the available environment variables;
+Tunnel will attempt to resolve the following details from the available environment variables;
 
 - repository name
 - branch name
@@ -54,21 +54,21 @@ There are some environments variables for overriding default values and behavior
 
 | Variable                   | Purpose                                                                                                                                                              |
 | :------------------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| OVERRIDE_REPOSITORY        | Use this environment variable to explicitly specify the repository name used by Trivy                                                                                |
+| OVERRIDE_REPOSITORY        | Use this environment variable to explicitly specify the repository name used by Tunnel                                                                                |
 | FALLBACK_REPOSITORY        | Use this environment variable as a backup if no other repository env vars can be found                                                                               |
-| OVERRIDE_BRANCH            | Use this environment variable to explicitly specify the branch used by Trivy                                                                                         |
+| OVERRIDE_BRANCH            | Use this environment variable to explicitly specify the branch used by Tunnel                                                                                         |
 | FALLBACK_BRANCH            | Use this environment variable as a backup if no other branch env vars can be found                                                                                   |
 | OVERRIDE_BUILDSYSTEM       | Use this environment variable to explicitly specify the build system                                                                                                 |
 | IGNORE_PANIC               | Use this environment variable to return exit code 0 on cli panic error                                                                                               |
-| OVERRIDE_REPOSITORY_URL    | Use this environment variable to explicitly specify the repository link used by Trivy (For result's web link)                                                        |
-| OVERRIDE_REPOSITORY_SOURCE | Use this environment variable to explicitly specify the repository source used by Trivy                                                                              |
+| OVERRIDE_REPOSITORY_URL    | Use this environment variable to explicitly specify the repository link used by Tunnel (For result's web link)                                                        |
+| OVERRIDE_REPOSITORY_SOURCE | Use this environment variable to explicitly specify the repository source used by Tunnel                                                                              |
 | HTTP_PROXY/HTTPS_PROXY     | Use these environment variable for proxy configuration                                                                                                               |
 | XDG_DATA_HOME              | use this environment variable to designate the base directory for storing user-specific data                                                                         |
 | XDG_CACHE_HOME             | use this environment variable for setting the cache directory                                                                                                        |
 | SAST_LOGS                  | use this environment variable with true value for writing sast logs to a file (The file name is: ${REPOSITORY_NAME}-sast-logs.txt under the SAST_LOGS_DIR directory) |
-| SAST_LOGS_DIR              | use this environment variable to explicitly specify the location where the log file should be written (Default is /tmp/.trivy/plugins/aqua)                          |
-| TRIVY_QUIET                | Disable trivy output report in log                                                                                                                                   |
-| AQUA_ASSURANCE_EXPORT      | The path to export policies results (JSON)                                                                                                                           |
+| SAST_LOGS_DIR              | use this environment variable to explicitly specify the location where the log file should be written (Default is /tmp/.tunnel/plugins/khulnasoft)                          |
+| TUNNEL_QUIET                | Disable tunnel output report in log                                                                                                                                   |
+| KHULNASOFT_ASSURANCE_EXPORT      | The path to export policies results (JSON)                                                                                                                           |
 | OVERRIDE_AUTHOR            | Use this environment variable to override the author of the scan (commit pusher by default)                   |
 | OVERRIDE_RUN_ID            | Use this environment variable to override the run id (default to SCM run build number)                        |
 | OVERRIDE_BUILD_ID          | Use this environment variable to override the job/build id (default to SCM build id)                          |
@@ -76,20 +76,20 @@ There are some environments variables for overriding default values and behavior
 
 | Argument                  | Environment variable        | Purpose                                                      | Example Usage                                                                |
 | ------------------------- | --------------------------- | ------------------------------------------------------------ | ---------------------------------------------------------------------------- |
-| `--debug`                 | DEBUG                       | Get more detailed output as Trivy runs.                      | `--debug` / DEBUG=true                                                       |
-| `--severities`            | TRIVY_SEVERITY              | The Severities that you are interested in.                   | `--severities CRITICAL,HIGH,UNKNOWN` / TRIVY_SEVERITY= CRITICAL,HIGH,UNKNOWN |
+| `--debug`                 | DEBUG                       | Get more detailed output as Tunnel runs.                      | `--debug` / DEBUG=true                                                       |
+| `--severities`            | TUNNEL_SEVERITY              | The Severities that you are interested in.                   | `--severities CRITICAL,HIGH,UNKNOWN` / TUNNEL_SEVERITY= CRITICAL,HIGH,UNKNOWN |
 | `--skip-pipelines`        | SKIP_PIPELINES              | Skip scan repository pipeline files.                         | `--skip-pipelines` / SKIP_PIPELINES=true                                     |
 | `--sast`                  | SAST                        | To enable SAST scanning.                                     | `--sast` / SAST=true                                                         |
 | `--reachability`          | REACHABILITY                | To enable reachability scanning.                             | `--reachability` / REACHABILITY=true                                         |
 | `--package-json`          | PACKAGE_JSON                | Scan package.json files without lock files                   | `--package-json` / `PACKAGE_JSON=true`                                       |
 | `--dotnet-proj`           | DOTNET_PROJ                 | Scan dotnet proj files without lock files                    | `--dotnet-proj` / `DOTNET_PROJ=true`                                         |
-| `--skip-policies`         | TRIVY_SKIP_POLICIES         | Skip policies checks                                         | `--skip-policies` / `TRIVY_SKIP_POLICIES=true`                               |
-| `--skip-result-upload`    | TRIVY_SKIP_RESULT_UPLOAD    | Disable uploading scan results to aqua platform              | `--skip-result-upload` / `TRIVY_SKIP_RESULT_UPLOAD=true`                     |
-| `--skip-policy-exit-code` | TRIVY_SKIP_POLICY_EXIT_CODE | Prevent non-zero exit code if an assurance policy has failed | `--skip-policy-exit-code` / `TRIVY_SKIP_POLICY_EXIT_CODE=true`               |
+| `--skip-policies`         | TUNNEL_SKIP_POLICIES         | Skip policies checks                                         | `--skip-policies` / `TUNNEL_SKIP_POLICIES=true`                               |
+| `--skip-result-upload`    | TUNNEL_SKIP_RESULT_UPLOAD    | Disable uploading scan results to khulnasoft platform              | `--skip-result-upload` / `TUNNEL_SKIP_RESULT_UPLOAD=true`                     |
+| `--skip-policy-exit-code` | TUNNEL_SKIP_POLICY_EXIT_CODE | Prevent non-zero exit code if an assurance policy has failed | `--skip-policy-exit-code` / `TUNNEL_SKIP_POLICY_EXIT_CODE=true`               |
 
 ## GitHub Action Integration Example
 
-To demonstrate the seamless integration of the Aqua Security Trivy Plugin into your development workflow, which can run triggered by push (full scan) or triggered by creating a pull request (scan the Git diff's), consider the following GitHub Actions example:
+To demonstrate the seamless integration of the KhulnaSoft Security Tunnel Plugin into your development workflow, which can run triggered by push (full scan) or triggered by creating a pull request (scan the Git diff's), consider the following GitHub Actions example:
 
 ```yaml
 name: Code Repository Security Scan
@@ -108,44 +108,44 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: Run Aqua scanner
-        uses: docker://aquasec/aqua-scanner
+      - name: Run KhulnaSoft scanner
+        uses: docker://khulnasoftsec/khulnasoft-scanner
         with:
-          args: trivy fs --scanners config,vuln,secret .
+          args: tunnel fs --scanners config,vuln,secret .
         env:
-          AQUA_KEY: ${{ secrets.AQUA_KEY }}
-          AQUA_SECRET: ${{ secrets.AQUA_SECRET }}
+          KHULNASOFT_KEY: ${{ secrets.KHULNASOFT_KEY }}
+          KHULNASOFT_SECRET: ${{ secrets.KHULNASOFT_SECRET }}
           GITHUB_TOKEN: ${{ github.token }}
-          TRIVY_RUN_AS_PLUGIN: "aqua"
+          TUNNEL_RUN_AS_PLUGIN: "khulnasoft"
           # Use here any other environment variable
 ```
 
 ### Usage for running manually using docker command
 
 ```bash
-AQUA_KEY=${AQUA_KEY} AQUA_SECRET=${AQUA_SECRET} TRIVY_RUN_AS_PLUGIN=aqua docker run -it -e AQUA_KEY -e AQUA_SECRET -e TRIVY_RUN_AS_PLUGIN -e INPUT_WORKING_DIRECTORY=/scanning -v "${YOUR_WORKSPACE}":"/scanning" aquasec/aqua-scanner trivy fs --scanners config,vuln,secret .
+KHULNASOFT_KEY=${KHULNASOFT_KEY} KHULNASOFT_SECRET=${KHULNASOFT_SECRET} TUNNEL_RUN_AS_PLUGIN=khulnasoft docker run -it -e KHULNASOFT_KEY -e KHULNASOFT_SECRET -e TUNNEL_RUN_AS_PLUGIN -e INPUT_WORKING_DIRECTORY=/scanning -v "${YOUR_WORKSPACE}":"/scanning" khulnasoftsec/khulnasoft-scanner tunnel fs --scanners config,vuln,secret .
 ```
 
 ## Usage with Podman
 
 ```bash
 podman run --rm \
-                -e AQUA_KEY=${AQUA_KEY} \
-                -e AQUA_SECRET=${AQUA_SECRET} \
-                -e TRIVY_RUN_AS_PLUGIN='aqua' \
+                -e KHULNASOFT_KEY=${KHULNASOFT_KEY} \
+                -e KHULNASOFT_SECRET=${KHULNASOFT_SECRET} \
+                -e TUNNEL_RUN_AS_PLUGIN='khulnasoft' \
                 -e SAST='true' \
                 -e INPUT_WORKING_DIRECTORY='/scanning' \
                 -v ${WORKSPACE}:/scanning \
-                docker.io/aquasec/aqua-scanner \
-                git config --global --add safe.directory /scanning && trivy fs --scanners='config,vuln,secret' .
+                docker.io/khulnasoftsec/khulnasoft-scanner \
+                git config --global --add safe.directory /scanning && tunnel fs --scanners='config,vuln,secret' .
 
 ```
 
 When working within CI environment, it's important to include the Source Code Management (SCM) tokens for pull requests. You can find additional guidance and details on this matter within our platform for your reference about each SCM.
 
-# aqua-scanner limited Tag (Beta)
+# khulnasoft-scanner limited Tag (Beta)
 
-We now provide a dedicated limited permission tag, for running the aqua-scanner on a non-root user.
+We now provide a dedicated limited permission tag, for running the khulnasoft-scanner on a non-root user.
 
 Tag name: `latest-limited`
 Support for: linux/amd64, linux/arm64
@@ -159,19 +159,19 @@ trigger:
   - main
 
 container:
-  image: aquasec/aqua-scanner:latest-limited
+  image: khulnasoftsec/khulnasoft-scanner:latest-limited
   options: -u 0
   env:
-    AQUA_KEY: $(AQUA_KEY)
-    AQUA_SECRET: $(AQUA_SECRET)
+    KHULNASOFT_KEY: $(KHULNASOFT_KEY)
+    KHULNASOFT_SECRET: $(KHULNASOFT_SECRET)
     AZURE_TOKEN: $(AZURE_TOKEN)
-    TRIVY_RUN_AS_PLUGIN: aqua
+    TUNNEL_RUN_AS_PLUGIN: khulnasoft
 steps:
   - checkout: self
     fetchDepth: 0
   - script: |
-      trivy fs --scanners config,vuln,secret .
-    displayName: Aqua scanner
+      tunnel fs --scanners config,vuln,secret .
+    displayName: KhulnaSoft scanner
 ```
 
 ## Compatibility
@@ -180,4 +180,4 @@ The plugin is designed for Docker environments and is compatible with Linux cont
 
 ## License
 
-This GitHub repository is licensed under the [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0). It is exclusively available for Aqua Security customers and is not open source. Please contact Aqua Security for licensing details.
+This GitHub repository is licensed under the [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0). It is exclusively available for KhulnaSoft Security customers and is not open source. Please contact KhulnaSoft Security for licensing details.
